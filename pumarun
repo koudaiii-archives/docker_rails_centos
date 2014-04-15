@@ -1,0 +1,10 @@
+#!/bin/bash
+export PATH=/usr/local/rbenv/shims:/usr/local/rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+
+source /etc/profile.d/enable
+source /etc/profile.d/qt.sh
+source /etc/profile.d/rbenv.sh
+source /etc/profile.d/nvm.sh
+
+#Start puma
+cd /var/www/app/;/usr/local/rbenv/shims/bundle exec puma -e production -d -b unix:///var/run/app.sock -S /var/run/app.state

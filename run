@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#Start mysqld 
+cd /usr ; /usr/bin/mysqld_safe &
