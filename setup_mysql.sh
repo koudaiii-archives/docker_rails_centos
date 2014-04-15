@@ -4,16 +4,10 @@ set -e
 #Run mysql user
 chown -R mysql:mysql /var/lib/mysql
 
-#Install
-mysql_install_db --user mysql > /dev/null
-
-sleep 10s
-
 #Start mysqld 
-cd /usr ; /usr/bin/mysqld_safe &  > /dev/null
-#mysqld &
-
-sleep 10s
+/etc/init.d/mysqld start &
+MYSQL_PID=$!
+wait $MYSQL_PID
 
 #Setup MYSQL
 MYSQL_COMMAND="mysql -uroot mysql -e"

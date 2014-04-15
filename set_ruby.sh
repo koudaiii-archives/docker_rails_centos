@@ -20,6 +20,9 @@ yum -y install openssl-devel
 yum -y install curl
 yum -y install curl-devel
 
+#for therubyracer
+yum -y install gcc-c++
+
 #for ImageMagick
 yum -y install ImageMagick
 yum -y install ImageMagick-devel
@@ -49,7 +52,7 @@ export PATH=/opt/rh/qt48/root/usr/lib64/qt4/bin/${PATH:+:${PATH}} >> /etc/profil
 
 source /etc/profile.d/qt.sh
 
-i f[ ! -d /usr/local/rbenv ];then
+if [ ! -d /usr/local/rbenv ];then
     cd /usr/local
     git clone git://github.com/sstephenson/rbenv.git rbenv
     mkdir rbenv/shims rbenv/versions rbenv/plugins

@@ -4,7 +4,10 @@ export RBENV_ROOT=/usr/local/rbenv
 export PATH=/usr/local/rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
-cd /usr ; /usr/bin/mysqld_safe &  > /dev/null
+#Start mysqld 
+/etc/init.d/mysqld start &
+MYSQL_PID=$!
+wait $MYSQL_PID
 
 # for deploy
 cd /var/www/

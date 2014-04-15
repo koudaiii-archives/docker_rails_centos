@@ -1,4 +1,4 @@
 #!/bin/bash
 
-#Start mysqld 
-cd /usr ; /usr/bin/mysqld_safe &
+#Start mysqld
+/etc/init.d/mysqld start
