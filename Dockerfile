@@ -63,6 +63,28 @@ ADD ./nginx.conf /etc/nginx/nginx.conf
 # Expose ports for nginx.
 EXPOSE 80
 
+#######################################  Mysql  ########################################
+
+RUN yum -y install mysql-server mysql mysql-devel mysql-client
+
+ADD my.cnf /etc/my.cnf
+RUN chmod 664 /etc/my.cnf
+
+#Mysql run
+ADD run /usr/local/bin/run
+ADD setup_mysql.sh /root/setup_mysql.sh
+RUN chmod +x /usr/local/bin/run; chmod +x /root/setup_mysql.sh
+
+RUN touch /etc/sysconfig/network #This file is needed in /etc/init.d/mysqld
+
+
+CMD ["/usr/local/bin/run"]
+RUN /bin/sh /root/setup_mysql.sh
+
+
+# expose for mysqld
+EXPOSE 3306
+
 #######################################  Supervisord  ########################################
 
 RUN wget http://peak.telecommunity.com/dist/ez_setup.py;python ez_setup.py;easy_install distribute;
