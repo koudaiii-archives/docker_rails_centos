@@ -48,7 +48,7 @@ ln -s /opt/rh/qt48/root/usr/include/QtCore/qconfig-64.h  /opt/rh/qt48/root/usr/i
 ln -s /opt/rh/qt48/enable /etc/profile.d/enable
 source /etc/profile.d/enable
 
-export PATH=/opt/rh/qt48/root/usr/lib64/qt4/bin/${PATH:+:${PATH}} >> /etc/profile.d/qt.sh 
+echo 'export PATH=/opt/rh/qt48/root/usr/lib64/qt4/bin/${PATH:+:${PATH}}' >> /etc/profile.d/qt.sh 
 
 source /etc/profile.d/qt.sh
 
