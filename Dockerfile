@@ -65,6 +65,7 @@ EXPOSE 80
 
 #######################################  Mysql  ########################################
 
+RUN yum install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
 RUN yum -y install mysql-server mysql mysql-devel mysql-client
 
 ADD my.cnf /etc/my.cnf
