@@ -78,8 +78,8 @@ if [ ! -d /usr/local/rbenv ];then
     # install withou ri,rdoc
     echo 'install: --no-ri --no-rdoc' >> /etc/.gemrc
     echo 'update: --no-ri --no-rdoc' >> /etc/.gemrc
-    echo 'install: --no-ri --no-rdoc' >> /.gemrc
-    echo 'update: --no-ri --no-rdoc' >> /.gemrc
+    echo 'install: --no-ri --no-rdoc' >> ~/.gemrc
+    echo 'update: --no-ri --no-rdoc' >> ~/.gemrc
 
     # install bundler
     gem install bundler

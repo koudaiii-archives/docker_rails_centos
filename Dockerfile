@@ -14,6 +14,7 @@ RUN yum -y install git vim
 
 RUN yum -y install passwd openssh openssh-server openssh-clients sudo
 
+RUN yum -y install sendmail
 
 # useradd user,name to koudaiii
 
@@ -65,8 +66,9 @@ EXPOSE 80
 
 #######################################  Mysql  ########################################
 
-RUN yum install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
+RUN yum -y install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
 RUN yum -y install mysql-server mysql mysql-devel mysql-client
+RUN chown mysql:mysql -R /var/lib/mysql
 
 ADD my.cnf /etc/my.cnf
 RUN chmod 664 /etc/my.cnf
