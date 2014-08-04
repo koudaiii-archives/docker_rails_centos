@@ -29,7 +29,7 @@ yum -y install ImageMagick-devel
 
 
 #for rubygems mysql2
-yum -y install mysql-devel l
+yum -y install mysql-devel
 
 #for capistrano zip
 yum -y install bzip2*
