@@ -12,7 +12,7 @@ yum --security update
 yum -y install gcc 
 yum -y install make
 yum -y install zlib
-yum -y install zlib-deve
+yum -y install zlib-dev
 yum -y install readline
 yum -y install readline-devel
 yum -y install openssl
